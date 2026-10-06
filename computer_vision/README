@@ -1,0 +1,11 @@
+🎨 Computer Vision Agent An intelligent Streamlit web application powered by Hugging Face models that automatically routes user requests to perform text-to-image generation, image captioning/description, and image editing.✨ FeaturesAutomated Routing: Automatically decides which tool to use based on user input (text vs. uploaded image).Text-to-Image Generation: Generate high-quality images from prompts using FLUX.1-schnell or Stable Diffusion XL.Image Description: Generate captions and descriptions for uploaded images using BLIP Image Captioning.Image Editing: Re-imagine and edit existing images using instructions powered by FLUX.1-Kontext-dev.Robust Error Handling: Built-in automatic retries, timeouts, and user-friendly error indicators for API calls.🛠️ Architecture & ToolsActionLogic / ConditionModel UsedGenerate ImagePrompt entered + No image uploadedblack-forest-labs/FLUX.1-schnellstabilityai/stable-diffusion-xl-base-1.0Describe ImageImage uploaded + No text promptSalesforce/blip-image-captioning-largeEdit ImageImage uploaded + Text promptblack-forest-labs/FLUX.1-Kontext-dev🚀 Getting StartedPrerequisitesPython 3.8 or higherA free Hugging Face User Access Token (Get one here)InstallationClone the repository:git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+Set up a virtual environment (optional but recommended):python -m venv myenv
+# On Windows:
+myenv\Scripts\activate
+# On macOS/Linux:
+source myenv/bin/activate
+Install dependencies:pip install streamlit requests pillow python-dotenv huggingface_hub
+🔑 ConfigurationCreate a .env file in the root directory of the project alongside image.py:HF_API_TOKEN=hf_your_hugging_face_access_token_here
+(Alternatively, you can set HF_API_TOKEN as a system environment variable or configure it via Streamlit Secrets if deploying to Streamlit Cloud).💻 Running the ApplicationLaunch the Streamlit app with the following command:streamlit run image.py
+Open your browser at http://localhost:8501 to view the agent interface.📜 LicenseDistributed under the MIT License. See LICENSE for more information.
